@@ -12,7 +12,6 @@ function Profile() {
   const fileRef = useRef(null);
   const [image, setImage] = useState(undefined);
   const [imagePercentage, setImagePercentage] = useState(0);
-  console.log(imagePercentage);
 
   const [imageError, setImageError] = useState(false);
   const [formData, setFormData] = useState({});
@@ -59,7 +58,7 @@ function Profile() {
           onChange={(e) => setImage(e.target.files[0])}
         />
         <img
-          src={currentUser.profilePicture}
+          src={formData.profilePicture|| currentUser.profilePicture}
           alt="profile"
           className="h-24 w-24 self-center cursor-pointer rounded-full object-cover mt-2"
           onClick={() => fileRef.current.click()}
